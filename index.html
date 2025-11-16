@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - My Smart Bac</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f8f9fa; }
+        header { background:#007bff; color:white; padding:20px; text-align:center; }
+        nav { background:#0056b3; text-align:center; padding:10px; }
+        nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+        nav a:hover { text-decoration:underline; }
+        main { padding:20px; margin-top:60px; } /* pour laisser place au bandeau */
+        footer { background:#007bff; color:white; text-align:center; padding:10px; position:fixed; bottom:0; width:100%; }
+
+        /* Bandeau de bienvenue */
+        #welcome-banner {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        #welcome-banner.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bandeau de bienvenue -->
+<div id="welcome-banner">
+    Bienvenue sur My Smart Bac ! Découvre des sujets et exercices pour réviser ton Bac gratuitement !
+</div>
+
+<header>
+    <h1>My Smart Bac</h1>
+    <p>Apprends, révise et réussis ton Bac facilement !</p>
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="sujets.html">Sujets</a>
+    <a href="exercices.html">Exercices</a>
+    <a href="premium.html">Premium</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+    <h2>Bienvenue sur My Smart Bac</h2>
+    <p>My Smart Bac est un site où tu peux accéder à des sujets et exercices pour réviser ton Bac :</p>
+    <ul>
+        <li>Mathématiques (TC et TD)</li>
+        <li>Physique (TC et TD)</li>
+        <li>SVT (TC et TD)</li>
+    </ul>
+    <p>Profite de 5 documents gratuits et découvre nos contenus Premium pour accéder à tous les sujets !</p>
+</main>
+
+<footer>
+    <p>© 2025 My Smart Bac - Congo Brazzaville</p>
+</footer>
+
+<script>
+    // Faire apparaître le bandeau au chargement
+    window.onload = function() {
+        var banner = document.getElementById('welcome-banner');
+        banner.classList.add('show');
+
+        // Faire disparaître le bandeau après 5 secondes
+        setTimeout(function(){
+            banner.style.display = 'none';
+        }, 5000);
+    };
+</script>
+
+</body>
+</html>
